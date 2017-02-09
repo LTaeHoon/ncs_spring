@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- beanFactory.xml :빈(java class) 객체 생성 공장 -->
+	<!-- <bean>태그 : useBean 액션태그 동일 -->
+	<!-- MessageKr 빈 객체 생성 -->
+	<bean id="message" class="sample03.MessageKr"/>
+	<!-- MessageEn 빈 객체 생성 : id 중복 불가 -->
+	<bean id="message2" class="sample03.MessageEn"/>
+	
+	<!-- MessageKr 빈 객체 생성 -->
+	<bean id="message3" class="sample03.MessageKr"
+		  name="kor1,kor2,kor3"/>
+		  
+	<bean id="print" class="example.PrinterPrint"/>
+	<bean id="console" class="example.ConsolePrint"/>
+	
+</beans>

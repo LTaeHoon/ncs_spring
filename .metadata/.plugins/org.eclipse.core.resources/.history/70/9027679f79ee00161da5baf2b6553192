@@ -1,0 +1,11 @@
+package example;
+
+public class ConsolePrint implements Print {
+
+	@Override
+	public void printer() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

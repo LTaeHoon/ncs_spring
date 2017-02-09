@@ -32,7 +32,7 @@ public class Hello {
 		// 5단계 : name으로 주입하기
 		Message msg3 = (Message)bean.getBean("kor1");  //별칭 이용
 		msg3.sayHello("이순신");
-				
+		
 	}
 
 }

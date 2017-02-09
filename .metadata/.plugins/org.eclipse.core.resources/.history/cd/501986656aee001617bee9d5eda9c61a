@@ -1,0 +1,21 @@
+package sample02;
+
+public class Hello {
+	/*
+	 * class 간의 강결합 예시
+	 *  사용클래스 : Hello
+	 *  구현클래스 : MessageKr(한국어 인사말), MessageEn(영어 인사말)
+	 */
+	public static void main(String[] args) {
+		
+		//영어 인사말
+		MessageEn msg = new MessageEn();
+		msg.sayHello("Mr.Hong");
+		
+		//한국어 인사말
+		MessageKr msgkr= new MessageKr();
+		msgkr.sayHello("홍길동");
+		
+	}
+
+}

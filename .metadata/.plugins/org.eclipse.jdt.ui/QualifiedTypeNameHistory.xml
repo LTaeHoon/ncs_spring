@@ -1,2 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="sample01.MessageKr"/>
+<fullyQualifiedTypeName name="sample01.MessageEn"/>
+<fullyQualifiedTypeName name="sample02.Message"/>
+<fullyQualifiedTypeName name="sample02.MessageEn"/>
+</qualifiedTypeNameHistroy>

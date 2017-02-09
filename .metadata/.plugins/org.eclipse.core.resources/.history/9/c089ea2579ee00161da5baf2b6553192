@@ -1,0 +1,14 @@
+﻿chap01_Basic 수업내용
+
+- 수업내용 : Spring 설정파일을 이용한 bean 객체 생성
+- 주요 keyword : IoC, bean, bean Factory, DI
+
+Project 유형 : java project
+
+sample01 : 강결합 예제
+sample02 : 약결합 예제(interface 적용)
+smaple03 : 느슨한 약결합 예제(interface + Spring DI)
+
+-> sts 플러그인 : Spring Tool Suite(STS) 3.8.3 설치
+-> Spring 설정파일 작성 
+	-[프로젝트] 오른쪽 버튼 > new > 
