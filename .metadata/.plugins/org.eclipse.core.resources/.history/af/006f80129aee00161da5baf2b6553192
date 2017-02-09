@@ -1,0 +1,7 @@
+﻿chap02_DI 수업내용
+
+- 수업내용 : 의존성 주입(DI)
+- 주요 keyword : Spring 컨테이너, Maven, DI 방법
+
+Project 유형 : new > Spring Legacy > Simple Spring Maven
+

@@ -1,0 +1,10 @@
+package spring.di.ch02;
+
+public class DaoImpl {
+	//Dao -> DB
+	
+	public void insert(){
+		
+	}
+	
+}

@@ -1,0 +1,17 @@
+package spring.di.ch02;
+
+//서비스 계층의 구현클래스 : 사용자에게 서비스 제공
+public class ServiceImpl {
+	//service -> Dao
+	private DaoImpl daoImpl; //has a 관계
+	
+	/*
+	 * 의존성 주입(DI) 방법 2가지
+	 *  1. 생성자 이용 방법(O)
+	 *  2. 설정메서드 이용 방법
+	 *  
+	 */
+	public ServiceImpl(){
+		
+	}
+}

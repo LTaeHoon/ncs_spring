@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- spring.di.ch01 -->
+	<bean id="message" class="spring.di.ch01.MessageKr"/>
+	
+	<!-- spring.di.ch02 -->
+	<bean id="serviceImpl" class="spring.di.ch02.ServiceImpl">
+		<!-- 생성자 이용 DI -->
+		<constructor-arg>
+			<ref bean="daoImpl"/>
+		</constructor-arg>
+	</bean>
+	<bean id="daoImpl" class="spring.di.ch02.DaoImpl"/>
+	
+	<!-- spring.di.ch03 -->
+	<bean id="serviceImpl2" class="spring.di.ch03.ServiceImpl">
+	
+	
+	</bean>
+	<bean id="daoImpl2" class="spring.di.ch03.DaoImpl"
+</beans>

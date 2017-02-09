@@ -1,0 +1,5 @@
+package spring.di.ch02;
+
+public class ServiceImpl {
+
+}

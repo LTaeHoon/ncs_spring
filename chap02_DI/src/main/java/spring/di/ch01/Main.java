@@ -6,8 +6,6 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 //사용 클래스
 public class Main {
 
-	// view page(jsp) -> Main(컨트롤러) -> Service -> Dao -> DB
-	
 	public static void main(String[] args) {
 		// 1. 스프링 설정파일로부터 스프링 컨테이너 생성
 		AbstractApplicationContext context =

@@ -1,0 +1,7 @@
+package spring.di.ch01;
+
+public class MessageKr {
+	public void sayHello(String name){
+		
+	}
+}

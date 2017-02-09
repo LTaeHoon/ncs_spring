@@ -1,0 +1,13 @@
+package spring.di.ch02;
+
+public class DaoImpl {
+	//Dao -> DB
+	
+	public void insert(){
+		System.out.println("Dao 계층의 클래스~~");
+		System.out.println("첫번째 레코드가 삽입되었습니다.");
+	}
+	public void test(){
+		System.out.println("test");
+	}
+}

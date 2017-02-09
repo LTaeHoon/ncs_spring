@@ -1,0 +1,29 @@
+package spring.di.ch01;
+
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.xml.XmlBeanFactory;
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.core.io.FileSystemResource;
+import org.springframework.core.io.Resource;
+
+import sample03.Message;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// 1. 스프링 설정파일로부터 스프링 컨테이너 생성
+		AbstractApplicationContext context =
+		new ClassPathXmlApplicationContext("applicationContext.xml");
+		// 2. JVM 종료될 때 ApplicationContext를 종료하는 작업
+		context.registerShutdownHook();
+		// 3. 스프링 컨테이너에서 빈(객체)를 가져온다.
+		MessageKr message = (MessageKr)context.getBean("message");
+		// 4. 스프링 빈으로 메서드 호출
+		messageBean.sayHello("홍길동");
+		// 5. 어플리케이션 종료시 컨테이너에 존재하는 모든 빈(객체) 닫기
+		context.close();
+				
+	}
+
+}
