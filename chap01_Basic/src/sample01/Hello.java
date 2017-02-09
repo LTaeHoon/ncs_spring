@@ -9,9 +9,9 @@ public class Hello {
 	public static void main(String[] args) {
 		
 		//영어 인사말
-		MessageEn msg = new MessageEn();
+		/*MessageEn msg = new MessageEn();
 		msg.sayHello("Mr.Hong");
-		
+		*/
 		//한국어 인사말
 		MessageKr msgkr= new MessageKr();
 		msgkr.sayHello("홍길동");
