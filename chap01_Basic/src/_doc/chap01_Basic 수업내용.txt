@@ -1,0 +1,5 @@
+﻿chap01_Basic 수업내용
+
+- 수업내용 : Spring 설정파일을 이용한 bean 객체 생성
+- 주요 keyword : IoC, bean, bean Factory, DI
+

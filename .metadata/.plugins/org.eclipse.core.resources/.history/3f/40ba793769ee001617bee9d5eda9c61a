@@ -1,0 +1,11 @@
+package sample01;
+
+public class MessageEn {
+	// 구현클래스(한국어 인사말)
+	
+		public void sayHello(String name){
+			System.out.println("안녕하세요,"+name);
+		}
+
+
+}
