@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 	<!-- spring.di.ch01 -->
 	<bean id="message" class="spring.di.ch01.MessageKr"/>
@@ -21,4 +22,52 @@
 		<property name="daoImpl" ref="daoImpl2"/>
 	</bean>
 	<bean id="daoImpl2" class="spring.di.ch03.DaoImpl"/>
+	
+	<!-- spring.di.ch04 -->
+	<!--<bean id="moniter" class="spring.di.ch04.SystemMoniter">
+		변수 주입 : 받는 타입으로 자동으로 형변환 된다
+		<property name="time" value="10"/>
+		외부 객체 주입
+		<property name="smsSender" ref="smssender"/>
+	</bean> -->
+	<!--p형식) p:변수="값" p:변수-ref="참조빈id" -->
+	<bean id="moniter" class="spring.di.ch04.SystemMoniter"
+	       p:time="10" p:smsSender-ref="smssender"/>
+	<bean id="smssender" class="spring.di.ch04.SmsSender"/>
+	
+	<!-- spring.di.ch05 -->
+	<bean id="moniter2" class="spring.di.ch05.SystemMoniter">
+		<constructor-arg value="30"/>
+		<constructor-arg ref="smssender2"/>
+	</bean>		
+	<bean id="smssender2" class="spring.di.ch05.SmsSender"/>
+	
+	<!-- spring.di.ch06 -->
+	<bean id="list" class="spring.di.ch06.ListCollection">
+		<property name="userName">
+		<!-- list 원소 추가 -->
+			<list>
+				<value>홍길동</value>
+				<value>이순신</value>
+				<value>유관순</value>
+				<value>강감찬</value>
+			</list>
+		</property>	
+	</bean>
+	
+	<!-- spring.di.ch07 -->
+	<bean id="map" class="spring.di.ch07.MapCollection">
+		<property name="map">
+			<map key-type="java.lang.String" value-type="java.lang.Object">
+				<entry key="홍길동" value="80"/>
+				<entry key="이순신" value="90"/>
+				<entry key="강감찬" value="70"/>
+				<entry key="유관순" value="98"/>
+			
+			</map>
+		
+		</property>
+		
+	</bean>
+	
 </beans>

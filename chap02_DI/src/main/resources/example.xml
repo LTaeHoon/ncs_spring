@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="msg" class="spring.di.exam.MessageImpl" >
+		<constructor-arg value="홍길동"/> 
+		<property name="greeting" value="안녕하세요!!"/>
+		<property name="fileOutput" ref="fileoutput"/>
+	</bean>
+	<bean id="fileoutput" class="spring.di.exam.FileOutput">
+	 <property name="filePath" value="src/output.txt"></property>
+	</bean>	
+</beans>
