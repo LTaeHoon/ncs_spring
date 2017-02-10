@@ -3,7 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:p="http://www.springframework.org/schema/p"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-
+	<!--  exam1 -->
 	<bean id="msg" class="spring.di.exam.MessageImpl" >
 		<constructor-arg value="홍길동"/> 
 		<property name="greeting" value="안녕하세요!!"/>
@@ -11,5 +11,16 @@
 	</bean>
 	<bean id="fileoutput" class="spring.di.exam.FileOutput">
 	 <property name="filePath" value="src/output.txt"></property>
-	</bean>	
+	</bean>
+	
+	<!--  exam2 -->
+	
+	<bean id="call" class="spring.di.exam2.Call">
+		<constructor-arg ref="calc"/>
+	</bean>
+	<bean id="calc" class="spring.di.exam2.Calc">
+		<constructor-arg value="100"/>
+		<constructor-arg value="200"/>
+	</bean>
+		
 </beans>
