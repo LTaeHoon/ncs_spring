@@ -1,0 +1,16 @@
+﻿chap03_Annotation 수업내용
+
+- 수업내용 : Spring 주요 Annotation
+- 주요 keyword : Annotation, Component-scan
+
+Project 유형 : new > Spring Legacy > Simple Spring Maven
+
+- 설정파일 : applicationContext.xml
+1. spring.anno.ch01 패키지 : @Required = 필수속성 지정(property 생략 시 Error)
+2. spring.anno.ch02 패키지 : @Autowired = 동일타입으로 DI
+3. spring.anno.ch03 패키지 : @Qualifier = 한정자 지정 (동일타입이 여러개인 경우)
+4. spring.anno.ch04 패키지 : @Resource = 동일한 id로 DI
+
+- 설정파일 : applicationContext2.xml
+5. spring.anno.ch05 패키지 : context:component-scan 관련 애노테이션
+6. spring.anno.ch06 패키지 : member 관련 클래스에 component-scan 애노테이션 적용
