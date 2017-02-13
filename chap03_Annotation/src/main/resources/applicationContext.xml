@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+	<!--annotation 인식을 위해서 태그 추가  -->
+	<context:annotation-config/>
+	
+	<!-- spring.anno.ch01 -->
+	<bean id="required" class="spring.anno.ch01.RequiredClass">
+		<property name="num" value="10"/>
+	</bean>
+	
+	<!-- spring.anno.ch02 -->
+	<!-- <bean id="useClass" class="spring.anno.ch02.UseClass">
+		<property name="implClass" ref="implClass"/>
+	</bean>
+	<bean id="implClass" class="spring.anno.ch02.ImplClass"/>
+	 -->
+	<bean id="useClass" class="spring.anno.ch02.UseClass"/>
+	<bean id="implClass" class="spring.anno.ch02.ImplClass"/>
+	
+	<!-- spring.anno.ch03 -->
+	<bean id="useClass2" class="spring.anno.ch03.UseClass"/>
+	<bean id="implClass2" class="spring.anno.ch03.ImplClass">
+		<qualifier value="main"/>
+	</bean>
+	<bean id="implClass3" class="spring.anno.ch03.ImplClass"/>
+	
+	<!-- spring.anno.ch04 -->
+	<bean id="home" class="spring.anno.ch04.HomeController"/>
+	<bean id="num1" class="spring.anno.ch04.Number" p:number="100"/>
+	<bean id="num2" class="spring.anno.ch04.Number" p:number="200"/>
+	<bean id="num3" class="spring.anno.ch04.Number" p:number="300"/>
+	
+</beans>
