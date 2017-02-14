@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+   
+    <!-- jdbc 속성을 저장한 파일을 대상으로 빈 생성 -->
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+    	<property name="locations">
+    		<value>classpath:config/jdbc.properties</value>
+    	</property>
+    </bean>
+    
+    <!-- 1. Data Source : Oracle 디비 테이블 연동(JDBC방식)  -->
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<!-- JDBC Oracle 드라이버 클래스명 설정  -->
+		<property name="driverClassName" value="${jdbc.driver}"/>
+		<!-- JDBC Oracle 접속 문자열 설정 -->
+		<property name="url" value="${jdbc.url}"/>
+		<!-- Oracle 유저 ID 설정 -->
+		<property name="username" value="${jdbc.username}"/>
+		<!-- Oracle 패스워드 설정 -->
+		<property name="password" value="${jdbc.password}"/>
+	</bean>
+	
+	<!-- 2. JdbcTemplate 객체 생성(dataSource 이용) -->
+ 	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+ 		 <constructor-arg ref="dataSource"/>
+ 	</bean>
+ 	
+	<!-- 3. 주입 대상 클래스 : <context:component-scan> 태그 적용 -->
+	<context:component-scan base-package="spring.jdbc"/>
+</beans>
