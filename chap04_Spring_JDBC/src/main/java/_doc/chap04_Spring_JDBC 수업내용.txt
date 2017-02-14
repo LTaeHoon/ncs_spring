@@ -1,0 +1,20 @@
+﻿chap04_Spring_JDBC 수업내용
+
+- 수업내용 : Spring JDBC, DB 환경설정
+- 주요 keyword : Spring JDBC, 콜백메서드, 라이브러리 추가(POM xml > dependency 태그)
+
+Project 유형 : new > Spring Legacy > Simple Spring Maven
+
+1. pom.xml 라이브러리 추가(oracle, Spring JDBC 추가)
+	-> pom.txt 참고
+	-> ojdbc6, spring-jdbc 라이브러리 추가
+
+2. DB 환경설정
+	->src/main/resource 패키지에서 작업
+	-> applicationContext.xml에서 JDBC 환경설정
+	
+3. class 작성
+ - spring.jdbc.vo : DTO
+ - spring.jdbc.view : view class
+ - spring.jdbc.serive : service 계층 클래스
+ - spring.jdbc.dao : DAO 계층 class
