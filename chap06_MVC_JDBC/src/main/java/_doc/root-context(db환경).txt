@@ -1,0 +1,25 @@
+﻿	    <!-- Data Source : Oracle 디비 테이블 연동  -->
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<!-- JDBC Oracle 드라이버 클래스명 설정  -->
+		<property name="driverClassName">
+			<value>oracle.jdbc.driver.OracleDriver</value>
+		</property>
+		<!-- JDBC Oracle 접속 문자열 설정 -->
+		<property name="url">
+			<value>jdbc:oracle:thin:@127.0.0.1:1521:ORCL</value>
+		</property>
+		<!-- Oracle 유저 ID 설정 -->
+		<property name="username">
+			<value>scott</value>
+		</property>
+		<!-- Oracle 패스워드 설정 -->
+		<property name="password">
+			<value>tiger</value>
+		</property>
+	</bean>
+	
+	<!-- Spring JDBC : JdbcTemplate 객체 생성 -->
+ 	<bean name="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+ 		 <constructor-arg ref="dataSource"/>
+ 	</bean>

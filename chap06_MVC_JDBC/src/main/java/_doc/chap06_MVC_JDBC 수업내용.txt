@@ -1,0 +1,29 @@
+﻿chap05_Spring_MVC 수업내용
+
+- 수업내용 : Spring MVC + JDBC, root-context.xml(DB) 환경설정, 정적파일(src/main/webapp/resources에 위치)
+- 주요 keyword : resources, MVC, JDBC
+
+Project 유형 : Spring MVC Project
+	- top level package : spring.mvc.shop
+		-> 끝에 있는 명칭이 현재 프로젝트의 가상 루트명을 나타냄 (shop) 	
+	
+1. 기본 환경설정
+	- pom.xml : chap04(pom.txt)
+
+2. table 생성
+	- webapp/resources/db/goodsItem.sql
+	
+3. root-context.xml 설정
+	- root-context.txt 파일 참고
+	
+4. class 작성
+	- mvc.jdbc.vo(o)
+	- mvc.jdbc.controller(x)
+	- mvc.jdbc.model(o)
+	- mvc.jdbc.service(o)
+	
+5. servlet-context.xml :web환경 설정
+5. view page 작성
+	- 정적파일 : 컨트롤러와 무관한 파일(이미지, css, js 등)
+	- 동적파일 : Controller에 의해서 호출되는 페이지
+	- index.jsp & mvc.jdbc.controller(o)
