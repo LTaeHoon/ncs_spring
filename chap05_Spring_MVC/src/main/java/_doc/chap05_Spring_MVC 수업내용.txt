@@ -1,0 +1,31 @@
+﻿chap05_Spring_MVC 수업내용
+
+- 수업내용 : Spring MVC, servlet-context.xml 환경설정
+- 주요 keyword : Spring MVC, Controller의 주요 애노테이션, ModelAndView
+
+Project 유형 : Spring MVC Project
+	- top level package : spring.mvc.test	
+	
+1. 기본 환경설정
+	- Tomcat 서버 설치
+	- css, jsp 인코딩 방식 UTF-8 (Window-preference-Web)
+
+2. web.xml 환경설정
+	- root-context.xml : db 계층 환경 설정
+	- servlet-context.xml : web 계층 환경 설정
+	- url-pattern : *.do 수정
+	
+3. servlet-context.xml 환경설정
+	- Resolves views : view page 환경설정(시작폴더(ex> views/), 확장자 지정(ex> .jsp))
+	
+4. 
+1) spring.mvc.ch01 : @RequestMapping(value, method)
+2) spring.mvc.ch02 : url = /가상폴더/가상파일, /views/하위폴더/*.jsp
+	@ModelAttribute("참조변수")
+3) spring.mvc.ch03 : @RequestParam("변수")
+4) spring.mvc.ch04 : Spring method에서 class 선언 -> Object 생성(Model류)
+5) spring.mvc.ch05 : @CookieValue(value)
+6) spring.mvc.ch06 : @ModelAttribute,예외처리
+
+6) spring.mvc.ch06 : 예외처리(1.애노테이션)
+6) spring.mvc.ch06 : 예외처리(2.설정파일)

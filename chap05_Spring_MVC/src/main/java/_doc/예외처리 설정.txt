@@ -1,0 +1,36 @@
+﻿<!-- 예외 처리  -->
+
+<beans:bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+	  
+<!-- 애노테이션을 이용한 예외처리가 있을 경우, 우선 순위 적용 -->
+	 
+ <!-- 1. 애노테이션,  2. Global 설정 -->
+		
+<beans:property name="order" value="1"/>
+		
+<beans:property name="exceptionMappings">
+			
+<beans:props>
+				
+<beans:prop key="java.lang.ArithmeticException"> 
+
+ <!-- 산술적 예외 발생 시 : error/mathException.jsp 실행 -->
+
+		error/mathException
+	
+			</beans:prop>
+
+	
+			<beans:prop key="java.lang.Exception">
+
+				 <!-- 일반적인 예외 발생 시 : error/exception.jsp 실행 -->
+	
+				error/exception
+	
+			</beans:prop>
+			
+</beans:props>
+		
+</beans:property>
+	
+</beans:bean
