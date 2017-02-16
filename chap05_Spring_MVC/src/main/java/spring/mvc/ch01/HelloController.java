@@ -7,20 +7,31 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class HelloController {
-
-	//요청 url =/hello.do, 전송 방식 : GET
-	@RequestMapping(value = "/hello.do", method = RequestMethod.GET)
+	
+	// 요청 url = /hello.do, 전송 방식 : GET 
+	@RequestMapping(value="/hello.do", method=RequestMethod.GET)
 	public ModelAndView hello(){
 		/*
 		 * ModelAndView
-		 *  - Model : DB의 리턴값
-		 *  - View : 포워딩할 view page 정보
+		 *   - Model : DB의 리턴값 
+		 *   - View : 포워딩할 view page 정보 
 		 */
 		
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("name","홍길동"); //Model 값 생성
-		mav.setViewName("hello"); //view page 지정 - views/hello.jsp
+		mav.addObject("name", "홍길동"); // Model 값 생성
+		mav.setViewName("hello"); // view page 지정 - views/hello.jsp
 		
-		return mav; //실제 포워딩
+		return mav; // 실제 포워딩 
+		
 	}
+
 }
+
+
+
+
+
+
+
+
+
