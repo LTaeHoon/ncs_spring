@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap>
+	<typeAlias alias="Team" type="vo.Team" />
+	<!-- 리절트 맵 태그 : 자동바인딩 정보, id="참조변수"  -->
+	<resultMap id="TeamResult" class="vo.Team">
+		<!-- property=vo 멤버변수  column=테이블의 컬럼 -->
+		<result property="team_id" column="team_id" />
+		<result property="team_name" column="team_name" />
+	</resultMap>
+
+	<!-- select 전체 검색 -->
+	<select id="selectTeamAll" resultMap="TeamResult">
+		select * from team
+	</select>
+	
+	<!-- select 조건 검색 : 문자열 파라미터 -->
+	<select id="selectTeam" parameterClass="int" resultMap="TeamResult">
+		select * from team where team_id=#team_id#
+	</select>
+	
+	<!-- 레코드 추가 : 별칭 파라미터 -->
+	<insert id="insertTeam" parameterClass="Team">
+	   insert into team values(#team_id#, #team_name#)	
+	</insert>
+	
+	<!-- 레코드 삭제 : 문자열 파라미터 -->
+	<delete id="deleteTeam" parameterClass="int">
+	  delete from team where team_id = #team_id# 
+	</delete>
+	
+	<!-- 레코드 수정 : 문자열 파라미터 -->
+	<update id="updateTeam" parameterClass="Team">
+	  update team set team_name = #team_name#
+	                   where team_id = #team_id#	
+	</update>
+	
+</sqlMap>
+
+
+
+
+

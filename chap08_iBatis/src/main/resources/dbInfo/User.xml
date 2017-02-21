@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap>
+	<typeAlias alias="User" type="vo.User" />
+	<!-- 리절트 맵 태그 : 자동바인딩 정보, id="참조변수"  -->
+	<resultMap id="UserResult" class="vo.User">
+		<!-- property=vo 멤버변수  column=테이블의 컬럼 -->
+		<result property="user_id" column="user_id" />
+		<result property="user_pwd" column="user_pwd" />
+		<result property="user_name" column="user_name" />
+	</resultMap>
+
+	<!-- select 전체 검색 -->
+	<select id="selectAll" resultMap="UserResult">
+		select * from user1
+	</select>
+	
+	<!-- select 조건 검색 : 문자열 파라미터 -->
+	<select id="selectUser" parameterClass="String" resultMap="UserResult">
+		select * from user1 where user_id=#user_id#
+	</select>
+	
+	<!-- 레코드 추가 : 별칭 파라미터 -->
+	<insert id="insertUser" parameterClass="User">
+	   insert into user1 values(#user_id#, #user_pwd#, #user_name#)	
+	</insert>
+	
+	<!-- 레코드 삭제 : 문자열 파라미터 -->
+	<delete id="deleteUser" parameterClass="String">
+	  delete from user1 where user_id = #user_id# 
+	</delete>
+	
+	<!-- 레코드 수정 : 문자열 파라미터 -->
+	<update id="updateUser" parameterClass="User">
+	  update user1 set user_pwd = #user_pwd#, 
+	                   user_name = #user_name#
+	                   where user_id = #user_id#	
+	</update>
+	
+</sqlMap>
+
+
+
+
+
