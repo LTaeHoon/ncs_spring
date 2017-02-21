@@ -1,0 +1,13 @@
+﻿chap08_iBatis 수업내용
+
+- 수업내용 : iBatis ORM Framework 개념
+- 주요 keyword : iBatis 관련 환경설정(mapper 파일)
+
+Project 유형 :Simple Spring Maven 
+	
+1. 기본 환경설정
+	- pom.xml : iBatis 라이브러리 설정
+	
+2. SqlMapConfig.xml , User.xml
+
+3. iBatis class 작성

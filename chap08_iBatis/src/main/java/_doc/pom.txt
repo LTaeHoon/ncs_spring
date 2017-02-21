@@ -1,0 +1,48 @@
+﻿   <!-- 1) ojdbc6 다운로드 사이트 -->
+	<repositories>
+		<repository>
+			<id>codelds</id>
+			<url>https://code.lds.org/nexus/content/groups/main-repo</url>
+		</repository>
+	</repositories> 
+
+   <!-- 2)  Oracle 11g 라이브러리 -->
+	 <dependency>
+		<groupId>com.oracle</groupId>
+		<artifactId>ojdbc6</artifactId>
+		<version>11.2.0.3</version>
+	 </dependency>
+  	 		 
+   <!-- 3) dbcp 추가 -->
+	 <dependency>
+	 	<groupId>commons-dbcp</groupId>
+		<artifactId>commons-dbcp</artifactId>
+		<version>20030825.184428</version>
+	 </dependency>
+	 <dependency>
+		<groupId>commons-pool</groupId>
+		<artifactId>commons-pool</artifactId>
+		<version>20030825.183949</version>
+	 </dependency>
+	 <dependency>
+		<groupId>commons-collections</groupId>
+		<artifactId>commons-collections</artifactId>
+		<version>20040616</version>
+	 </dependency>
+  
+   <!-- 4) ORM & iBatis 관련 라이브러리 -->
+	 <dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-orm</artifactId>
+		<version>${spring-framework.version}</version>
+	 </dependency>
+	 <dependency>
+		<groupId>org.apache.ibatis</groupId>
+		<artifactId>ibatis-sqlmap</artifactId>
+		<version>2.3.0</version>
+	 </dependency>
+	 <dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-ibatis</artifactId>
+		<version>2.0.8</version>
+	 </dependency>  
