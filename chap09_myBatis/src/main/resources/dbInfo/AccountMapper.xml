@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- SqlMapConfig.xml의 <typeAliases>태그에서 type 값을
+         사용한 경우 namepace로 지정해야 error 발생하지 않음 -->
+<mapper namespace="vo.Account">
+    <!-- table 속성와 bean 속성과의 매핑 -->
+	<resultMap id="AccountMap" type="vo.Account">
+		<result property="id" column="id" />
+		<result property="pwd" column="pwd" />
+		<result property="name" column="name" />
+	</resultMap>  
+	
+	<!-- 전체 검색 -->
+    <select id="selectAllAcc" resultMap="AccountMap">
+		select * from account    
+    </select>
+    <!-- 조건 검색 -->
+    <select id="selectAcc" parameterType="String" resultMap="AccountMap">
+    	select * from account where id = #{id}
+    </select>
+    <!-- 레코드 삽입 -->
+    <insert id="insertAcc" parameterType="Account">
+    	insert into account values(#{id},#{pwd},#{name})
+    </insert>
+    
+    <!-- 레코드 삭제 -->
+    <delete id="deleteAcc" parameterType="String">
+    	delete from account where id=#{id}
+    </delete>
+    
+    <!-- 레코드 수정 -->
+    <update id="updateAcc" parameterType="Account">
+    	update account set pwd=#{pwd}, name=#{name} where id=#{id}
+    </update>
+    
+    
+</mapper>
+
+

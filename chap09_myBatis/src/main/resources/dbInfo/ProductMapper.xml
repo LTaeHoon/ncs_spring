@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- SqlMapConfig.xml의 <typeAliases>태그에서 type 값을
+         사용한 경우 namepace로 지정해야 error 발생하지 않음 -->
+<mapper namespace="vo.Product">
+    <!-- table 속성와 bean 속성과의 매핑 -->
+	<resultMap id="ProductMap" type="vo.Product">
+		<result property="num" column="num" />
+		<result property="name" column="name" />
+		<result property="price" column="price" />
+		<result property="reg_date" column="reg_date"/>
+	</resultMap>  
+	
+	<!-- 전체 검색 -->
+    <select id="selectAllPro" resultMap="ProductMap">
+		select * from product
+    </select>
+    <!-- 조건 검색 -->
+    <select id="selectPro" parameterType="int" resultMap="ProductMap">
+    	select * from product where num = #{num}
+    </select>
+    <!-- 레코드 삽입 -->
+    <insert id="insertPro" parameterType="Product">
+    	insert into product values(pro_seq.nextval,#{name},#{price},sysdate)
+    </insert>
+    
+    <!-- 레코드 삭제 -->
+    <delete id="deletePro" parameterType="int">
+    	delete from product where num=#{num}
+    </delete>
+    
+    <!-- 레코드 수정 -->
+    <update id="updatePro" parameterType="Product">
+    	update product set name=#{name}, price=#{price},reg_date=sysdate where num=#{num}
+    </update>
+    
+    
+</mapper>
+
+
