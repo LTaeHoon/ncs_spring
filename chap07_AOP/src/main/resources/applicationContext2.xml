@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
+	
+	<context:component-scan base-package="spring.aop.ch02"/>
+    
+    <!-- AOP 관련 환경설정 -->
+    <aop:config> <!-- aop 최상위 엘리먼트 -->
+       <!-- 공통모듈 지정 -->
+       <aop:aspect id="aspect" ref="aspectImpl">
+           <!-- 포인트 컷 메서드 지정  -->
+           <aop:pointcut expression="execution(* study())" id="point"/>   
+           <!-- 포인트 컷 메서드 호출 전과 후 실행할 메서드 지정  -->             
+           <aop:around method="weaving" pointcut-ref="point"/>       
+       </aop:aspect>       
+    </aop:config>
+</beans>
+
+
+
+
+
+
+
