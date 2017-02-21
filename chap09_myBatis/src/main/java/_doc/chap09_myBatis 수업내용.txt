@@ -1,0 +1,29 @@
+chap09_myBatis 수업내용
+
+- 수업내용 : myBatis ORM Framework  
+- 주요 keyword : my 환경설정, mapper 파일  
+
+1. 프로젝트 유형
+   Spring Project -> Simple Spring Maven   
+
+2.pom.xml 설정
+  -> db 관련, ORM & iBatis 관련 라이브러리 추가 
+  -> pom.txt 파일 upload 
+	 
+3. db 환경 설정
+  src/main/resources
+    dbInfo/account.sql : account 테이블 생성
+    dbInfo/dbconnect.properties : 데이터 소스(chap08)
+    dbInfo/SqlMapConfig.xml : myBatis 설정파일(upload)
+    dbInfo/AccountMapper.xml : 맵퍼 설정파일(upload)
+
+4. java 파일
+  src/main/java
+  myBatis.AccountDaoImpl : DAO 클래스(upload)
+  vo.Account : DTO 클래스 작성
+  AccountMapper.xml : select, insert, update, delete 태그 작성
+
+  
+   
+  
+ 
