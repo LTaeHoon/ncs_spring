@@ -1,0 +1,15 @@
+﻿chap05_Spring_MVC 수업내용
+
+- 수업내용 : Spring AOP 개념
+- 주요 keyword : 핵심모듈, 공통모듈, 포인트컷, 위빙(weaving)
+
+Project 유형 :Simple Spring Maven 
+	
+1. 기본 환경설정
+	- pom.xml : aop 라이브러리 설정
+	
+2. AOP class 작성
+	- spring.aop.ch01 : aop 태그 기반 환경설정
+	- spring.aop.ch02 : 로그 처리 공통 모듈 추가
+	- spring.aop.ch03 : aop 관련 애노테이션으로 클래스 작성
+		-> 주요 aop 관련 애노테이션.txt 파일 참조
